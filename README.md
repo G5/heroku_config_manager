@@ -1,6 +1,9 @@
 # Heroku Config Manager
 
-The Heroku Config Manager allows you to set and remove multiple config vars
+[![Gem Version](https://badge.fury.io/rb/heroku_config_manager.svg)](http://badge.fury.io/rb/heroku_config_manager)
+[![Build Status](https://travis-ci.org/G5/heroku_config_manager.svg?branch=formatting-logic)](https://travis-ci.org/G5/heroku_config_manager)
+
+A simple Ruby gem that allows you to set and remove multiple config vars
 for multiple apps at once.
 
 ## Installation
