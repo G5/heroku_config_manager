@@ -1,6 +1,7 @@
-# HerokuConfigManager
+# Heroku Config Manager
 
-TODO: Write a gem description
+The Heroku Config Manager allows you to set and remove multiple config vars
+for multiple apps at once.
 
 ## Installation
 
@@ -20,7 +21,24 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+You can pass in multiple apps and multiple config vars to set...
+
+```ruby
+api_key = "my-api-key"
+apps    = ["my-heroku-app-name", "another-heroku-app-name"]
+params  = { "CONFIG_ONE" => "value", "CONFIG_TWO" => "value" }
+
+HerokuConfigManager.set(api_key, apps, params)
+```
+
+In order to remove a config var, simply set it's value to nil in the passed in
+params...
+
+```ruby
+params  = { "MY_CONFIG_VAR" => nil }
+
+HerokuConfigManager.set(api_key, apps, params)
+```
 
 ## Contributing
 
@@ -29,3 +47,40 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+## Authors
+
+  * Brian Bauer / [@bbauer](https://github.com/bbauer)
+
+## Specs
+
+Run once.
+
+```bash
+$ rspec
+```
+
+## License
+
+Copyright (c) 2015 G5
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

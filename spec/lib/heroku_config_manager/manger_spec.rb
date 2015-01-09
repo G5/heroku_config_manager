@@ -22,7 +22,7 @@ describe HerokuConfigManager::Manager do
     subject { manager.set(params) }
     before { HTTParty.stub(:patch) }
 
-    it "calls the Heroku api resource with the appropriate headers and body" do
+    it "calls the Heroku api with the appropriate headers and body" do
       expect(HTTParty).to receive(:patch).with(expected_url, expected_parameters)
       subject
     end

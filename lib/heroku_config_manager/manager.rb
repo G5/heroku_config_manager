@@ -35,4 +35,3 @@ class HerokuConfigManager::Manager
     { body: vars.to_json }.merge(headers)
   end
 end
-
